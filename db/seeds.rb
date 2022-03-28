@@ -7,17 +7,20 @@ Review.destroy_all
 
 puts "🌱 Creating users..."
 user1 = User.create(
-    username: Faker::Name.name, 
+    name: Faker::Name.name, 
+    username: Faker::Internet.username,
     email: Faker::Internet.email, 
     image: Faker::Avatar.image, 
     bio: Faker::Hipster.paragraph)
 user2 = User.create(
-    username: Faker::Name.name, 
+    name: Faker::Name.name, 
+    username: Faker::Internet.username,
     email: Faker::Internet.email, 
     image: Faker::Avatar.image, 
     bio: Faker::Hipster.paragraph)
 user3 = User.create(
-    username: Faker::Name.name, 
+    name: Faker::Name.name, 
+    username: Faker::Internet.username,
     email: Faker::Internet.email, 
     image: Faker::Avatar.image, 
     bio: Faker::Hipster.paragraph)
@@ -42,7 +45,7 @@ house4 = House.create(
 house5 = House.create(
     image: "https://cdn.luxe.digital/media/20220301155544/most-expensive-houses-in-the-world-four-fairfield-pond-luxe-digital-900x600.jpg.webp", 
     location: "New York", 
-    description: "Our modest second home, very homey")
+    description: "Our modest second home, very cozy")
 
 puts "Creating reviews..."
 Review.create(
