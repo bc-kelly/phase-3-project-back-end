@@ -4,12 +4,15 @@ class ApplicationController < Sinatra::Base
   # Add your routes here
   get '/houses' do
     house = House.all.order(:location)
-    house.to_json
+
+    house.to_json(:include => {:reviews => {:include => :user}})
+
+    # house.to_json
   end
 
   get '/reviews' do
     review = Review.all.order(:rating)
-    review.to_json
+    review.to_json(:include => {:house => {:include => :users}})
   end
 
   get '/users' do
@@ -18,14 +21,14 @@ class ApplicationController < Sinatra::Base
   end
   
   post "/reviews" do
-    binding.pry
+    # binding.pry
     review = Review.create(content: params[:content], rating: params[:rating], user_id: params[:user_id], house_id: params[:house_id])
     review.to_json
   end
 
   post "/houses" do
-    binding.pry
-    house = Review.create(image: params[:image], location: params[:location], description: params[:description])
+    # binding.pry
+    house = House.create(image: params[:image], location: params[:location], description: params[:description])
     house.to_json
   end
   
