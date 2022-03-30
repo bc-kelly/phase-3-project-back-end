@@ -15,6 +15,12 @@ class ApplicationController < Sinatra::Base
     review.to_json(:include => {:house => {:include => :users}})
   end
 
+  get '/reviews/:id' do
+    review = Review.find(params[:id])
+
+    review.to_json(:include => {:house => {:include => :users}})
+  end
+
   get '/users' do
     review = User.all.order(:username)
     review.to_json
@@ -30,6 +36,15 @@ class ApplicationController < Sinatra::Base
     # binding.pry
     house = House.create(image: params[:image], location: params[:location], description: params[:description])
     house.to_json
+  end
+
+  patch '/reviews/:id' do
+    # binding.pry
+    review = Review.find(params[:id])
+    review.update(
+      content: params[:content]
+    )
+    review.to_json
   end
   
   delete "/houses/:id" do
