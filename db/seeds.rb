@@ -47,8 +47,8 @@ house5 = House.create(
     location: "New York", 
     description: "Our modest second home, very cozy")
 house6 = House.create(
-    image: "https://media.cntraveler.com/photos/580a61cd716cc04c20578525/master/pass/balfour-castle-GettyImages-170469848.jpg"
-    location: "Scotland"
+    image: "https://media.cntraveler.com/photos/580a61cd716cc04c20578525/master/pass/balfour-castle-GettyImages-170469848.jpg",
+    location: "Scotland",
     description: "Great Scott!"
 )
 
