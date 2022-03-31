@@ -46,6 +46,12 @@ house5 = House.create(
     image: "https://cdn.luxe.digital/media/20220301155544/most-expensive-houses-in-the-world-four-fairfield-pond-luxe-digital-900x600.jpg.webp", 
     location: "New York", 
     description: "Our modest second home, very cozy")
+house6 = House.create(
+    image: "https://media.cntraveler.com/photos/580a61cd716cc04c20578525/master/pass/balfour-castle-GettyImages-170469848.jpg"
+    location: "Scotland"
+    description: "Great Scott!"
+)
+
 
 puts "Creating reviews..."
 Review.create(
