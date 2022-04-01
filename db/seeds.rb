@@ -58,6 +58,16 @@ house8 = House.create(
     image: "https://www.jamesedition.com/stories/wp-content/uploads/2021/01/10.jpg",
     location: "Colorado",
     description: "pretty spacious")
+house9 = House.create(
+    image: "https://www.gannett-cdn.com/presto/2021/01/12/NPBD/08d0fd5e-2255-4d49-b608-e83342ae4615-PBN_POOL_REAR_535_N_County_Road_HiRes_PictureItSoldFL.jpg",
+    location: "Florida",
+    description: "we have a sick pool"
+)
+house10 = House.create(
+    image: "https://media.cntraveler.com/photos/53dac23a6dec627b14a00b4d/16:9/w_2560%2Cc_limit/taj-palace-hotel-marrakech-morocco-3.jpg",
+    location: "Morocco",
+    description: "home away from home"
+)
 
 
 puts "Creating reviews..."
@@ -96,6 +106,30 @@ Review.create(
     user: user1, 
     rating: 2, 
     content: "meh")
+Review.create(
+    house: house5, 
+    user: user2, 
+    rating: 2, 
+    content: "I've seen better"
+)
+Review.create(
+    house: house6, 
+    user: user3, 
+    rating: 4, 
+    content: "pleasantly surprised"
+)
+Review.create(
+    house: house7, 
+    user: user1, 
+    rating: 3,
+    content: "literally in the middle of nowhere"
+)
+Review.create(
+    house: house10, 
+    user: user2, 
+    rating: 5,
+    content: "would recommend"
+)
 
 
 puts "✅ Done seeding!"
