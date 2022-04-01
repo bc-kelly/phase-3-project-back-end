@@ -49,8 +49,15 @@ house5 = House.create(
 house6 = House.create(
     image: "https://media.cntraveler.com/photos/580a61cd716cc04c20578525/master/pass/balfour-castle-GettyImages-170469848.jpg",
     location: "Scotland",
-    description: "Great Scott!"
-)
+    description: "Great Scott!")
+house7 = House.create(
+    image: "http://prod-upp-image-read.ft.com/308bade4-3df6-11ea-b84f-a62c46f39bc2",
+    location: "Switzerland",
+    description: "my castle is your castle")
+house8 = House.create(
+    image: "https://www.jamesedition.com/stories/wp-content/uploads/2021/01/10.jpg",
+    location: "Colorado",
+    description: "pretty spacious")
 
 
 puts "Creating reviews..."
@@ -75,7 +82,7 @@ Review.create(
     rating: 1, 
     content: "messy")
 Review.create(
-    house: house2, 
+    house: house6, 
     user: user3, 
     rating: 1, 
     content: "cramped")
