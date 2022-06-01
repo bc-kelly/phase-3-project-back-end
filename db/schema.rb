@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2022_03_28_180115) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "houses", force: :cascade do |t|
     t.string "image"
     t.string "location"
@@ -21,8 +24,8 @@ ActiveRecord::Schema.define(version: 2022_03_28_180115) do
   create_table "reviews", force: :cascade do |t|
     t.string "content"
     t.integer "rating"
-    t.integer "user_id"
-    t.integer "house_id"
+    t.bigint "user_id"
+    t.bigint "house_id"
     t.index ["house_id"], name: "index_reviews_on_house_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
